@@ -1,0 +1,769 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body and Background */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+header .logo img {
+    width: 150px;
+    margin-left: 30px;
+}
+
+header .logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header .logo h4 {
+    margin-top: 2px;
+    margin-left: 30px;
+    letter-spacing: 5px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-grow: 1;
+    color: white;
+    font-size: 14px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* شريط التنقل */
+.navbar {
+    background-color: #ff6347;
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 5px rgba(255, 119, 0, 0.1);
+    /* إضافة تأثير ظل خفيف */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 50px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    /* تأثير انتقال عند التمرير */
+}
+
+/* التاب بار للأجهزة اللوحية */
+#tabBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    display: none;
+    /* إخفاءه بشكل افتراضي */
+}
+
+#tabBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#tabBar li {
+    display: inline-block;
+}
+
+#tabBar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-size: 14px;
+    /* حجم خط أصغر قليلاً للأجهزة اللوحية */
+}
+
+#tabBar a:hover {
+    background-color: #ddd;
+    border-radius: 15px;
+    color: black;
+}
+
+/* همبرغر مينو */
+.hamburger-menu {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+/* إخفاء القائمة في البداية */
+.mobile-menu {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* إظهار القائمة عند تفعيل الهامبرغر */
+.mobile-menu.show {
+    display: block;
+}
+
+#search-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+
+/* Products Section */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.product-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.product-info .btn-primary {
+    background-color: #ff6347;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-info .btn-primary:hover {
+    background-color: #ff4500;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Best Sellers Section */
+.best-sellers {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.best-sellers table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.best-sellers th,
+.best-sellers td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.best-sellers th {
+    background-color: #333;
+    color: white;
+}
+
+/* Video Section */
+.video {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* Special Offers Section */
+.offers {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.offer-card {
+    background-color: #ff6347;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Customer Reviews Section */
+.reviews {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.reviews .review {
+    font-style: italic;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.reviews .review:hover {
+    background-color: #fff8e1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add some spacing between reviews */
+.reviews .review+.review {
+    margin-top: 20px;
+}
+
+
+/* نموذج الاتصال */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff7300;
+    margin-bottom: 20px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    /* ضبط حجم العناصر بشكل مناسب */
+}
+
+#contact form button {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 320px;
+    /* جعل الزر أكبر قليلاً ليتناسب مع العرض */
+    margin-top: 20px;
+}
+
+#contact form button:hover {
+    background-color: #ff5500;
+    transition: all 0.3s ease
+}
+
+/* تنسيق الحاوية الرئيسية للعداد */
+.count {
+    display: flex;
+    /* لعرض العناصر بجانب بعضها البعض */
+    flex-direction: column;
+    /* لجعل العناصر تتكدس عموديًا */
+    align-items: center;
+    /* لتوسيط العناصر أفقيًا */
+    justify-content: center;
+    /* لتوسيط العناصر رأسيًا */
+    text-align: center;
+    /* لضمان توسيط النص */
+    margin-top: 20px;
+    /* لإضافة مساحة من الأعلى */
+}
+
+/* تنسيق عنوان العداد */
+.count h4 {
+    margin-bottom: 10px;
+    /* مساحة تحت العنوان */
+    font-family: sans-serif;
+    /* خط بسيط وواضح */
+    color: #333;
+    /* لون غامق للنص */
+}
+
+/* تنسيق الصورة (العداد) */
+.counter-img {
+    width: 80px;
+    /* يمكنك زيادة هذا الرقم لتكبير العداد */
+    height: auto;
+    /* يحافظ على نسبة الصورة */
+    /* الخصائص الأخرى التي ذكرناها سابقاً: */
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تعديل العداد نفسه في HTML: */
+/* لتأكد من ظهور الأرقام بوضوح، يمكن تعديل الكود في HTML. */
+/* يمكنك تغيير "style=0041" إلى "style=0005" مثلاً للحصول على أرقام أكبر وأكثر وضوحًا. */
+/* <img src="https://hitwebcounter.com/counter/counter.php?page=21441273&style=0005&nbdigits=1&type=page&initCount=0" /> */
+
+
+
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Footer Navbar */
+.footer-navbar {
+    display: none;
+}
+
+.footer-navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-navbar a:hover {
+    text-decoration: underline;
+}
+
+/* زر العودة إلى الأعلى */
+#goToTop {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #ff5500;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
+#goToTop:hover {
+    background-color: #000000;
+    transition: all 0.3s ease
+}
+
+/* الأجهزة الأكبر من التابلت (أكبر من 1024px) */
+@media screen and (min-width: 1025px) {
+    .navbar {
+        display: block;
+    }
+
+    #tabBar {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .card {
+        width: 22%;
+        /* تقليل عرض البطاقات قليلاً لتناسب أكبر قدر من العناصر */
+    }
+}
+
+/* الأجهزة اللوحية (بين 768px و 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    #tabBar {
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .card {
+        width: 45%;
+        /* عرض أكبر قليلاً للبطاقات للأجهزة اللوحية */
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header .navbar {
+        display: none;
+    }
+
+    header .hamburger-menu {
+        display: flex;
+    }
+
+    .footer-navbar {
+        display: block;
+    }
+
+    .product-cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .offer-card {
+        width: 90%;
+    }
+}
+
+.product-card.highlight {
+    border: 2px solid #FF5722;
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.6);
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+#top-products-container {
+    background: #fff4dc;
+    border: 2px solid #ffae00;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px auto;
+    width: 100%;
+    /* ✅ ياخذ عرض الشاشة */
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#top-products-list {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* ✅ يخليهم ينزلون سطر إذا ضاق العرض */
+    padding: 10px 0;
+}
+
+#top-products-list .product-card {
+    flex: 1 1 250px;
+    /* ✅ يتكيف حسب العرض، ويصغر لما يحتاج */
+    max-width: 300px;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 36px;
+    color: #333;
+}
+
+
+.weather-container {
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+}
+
+.weather-container div {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.weather-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-container .temp {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff5733;
+}
+
+.weather-container .condition {
+    font-size: 24px;
+    color: #4caf50;
+}
+
+.weather-container .humidity,
+.weather-container .wind,
+.weather-container .feelslike {
+    font-size: 18px;
+    color: #666;
+}
